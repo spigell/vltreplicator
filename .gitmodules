@@ -1,0 +1,6 @@
+[submodule "src/github.com/hashicorp/vault"]
+	path = src/github.com/hashicorp/vault
+	url = https://github.com/hashicorp/vault
+[submodule "src/gopkg.in/yaml.v2"]
+	path = src/gopkg.in/yaml.v2
+	url = https://gopkg.in/yaml.v2
