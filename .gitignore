@@ -1,0 +1,7 @@
+*.json
+test.go
+var*
+*.yml
+*_test
+bin/*
+*.sublime-workspace

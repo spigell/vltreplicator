@@ -25,11 +25,11 @@ func Replicate( c *ReplicaConfig ) {
 	err := c.CreateConnection("reader", readerToken)
 
 	if err != nil {
-		log.Fatal(err)	
+		log.Fatal(err)
 	}
 	keys, err := c.ReadKeys()
 	if err != nil {
-		log.Fatal(err)	
+		log.Fatal(err)
 	}
 
 	storage := make(map[string]string)
@@ -45,7 +45,7 @@ func Replicate( c *ReplicaConfig ) {
 
 	}
 	if err := c.CreateConnection("write", writeToken); err != nil {
-		log.Fatal(err)	
+		log.Fatal(err)
 	}
 
 	for key, value := range storage {
@@ -53,7 +53,7 @@ func Replicate( c *ReplicaConfig ) {
 		err := c.writeKeys(key, value)
 
 		if err != nil {
-			log.Fatal(err)	
+			log.Fatal(err)
 		}
 
 

@@ -2,8 +2,6 @@ package replication
 
 
 import (
-	"fmt"
-
 )
 
 func (d *ReplicaConfig) writeKeys ( key string, value string ) (e error) {
@@ -16,7 +14,6 @@ func (d *ReplicaConfig) writeKeys ( key string, value string ) (e error) {
 	writeData := m
 	_, err := d.client.Logical().Write(writeKeyName, writeData)
 	if err != nil {
-		fmt.Println(err)
 		return
 	}
 
