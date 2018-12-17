@@ -1,8 +1,8 @@
 reader:
   address: http://127.0.0.1:8200
-  path: kv/ntg/chef
+  path: kv/chef
   version: 2
 writer:
   address: http://127.0.0.1:8202
-  path: secret/ntg/chef
-reload_period: 5
+  path: secret/chef
+reload_period: 50

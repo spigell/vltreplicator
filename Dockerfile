@@ -1,17 +1,17 @@
 FROM golang:alpine as builder
 RUN apk --no-cache add git make gcc
 
-WORKDIR /go/luscheduler
+WORKDIR /go/vltreplicator
 
-RUN git clone http://192.168.23.1:10085/spigell/luscheduler .
+COPY . /go/vltreplicator
 
 RUN make submodule_check
 RUN make
 
 FROM alpine:latest
-RUN apk --no-cache add ca-certificates bash tzdata
+RUN apk --no-cache add ca-certificates bash
 WORKDIR /root/
-COPY --from=builder /go/luscheduler/bin/luscheduler .
+COPY --from=builder /go/vltreplicator/bin/vltreplicator .
 COPY /docker/entrypoint.sh /tmp/entrypoint.sh
 
 ENTRYPOINT ["/tmp/entrypoint.sh"]
