@@ -45,6 +45,6 @@ func (d *ReplicaConfig) ReadValue(key interface{}) (interface{}, error ) {
 		return "", err
 	}
 	data := secret.Data["data"].(map[string]interface{})
-	return data["key"], nil
+	return data["value"], nil
 
 }

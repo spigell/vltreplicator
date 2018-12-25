@@ -10,7 +10,7 @@ func (d *ReplicaConfig) writeKeys ( key string, value string ) (e error) {
 
 	writeKeyName := path + "/" + key
 	m := make(map[string]interface{})
-	m["key"] = value
+	m["value"] = value
 	writeData := m
 	_, err := d.client.Logical().Write(writeKeyName, writeData)
 	if err != nil {
