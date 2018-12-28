@@ -4,7 +4,7 @@ package replication
 import (
 )
 
-func (d *ReplicaConfig) writeKeys ( key string, value string ) (e error) {
+func (d *ReplicaConfig) writeKeys ( key string, value string ) ( error) {
 
 	path := d.WritePath
 
@@ -14,7 +14,7 @@ func (d *ReplicaConfig) writeKeys ( key string, value string ) (e error) {
 	writeData := m
 	_, err := d.client.Logical().Write(writeKeyName, writeData)
 	if err != nil {
-		return
+		return err
 	}
 
 	return nil

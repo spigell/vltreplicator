@@ -62,7 +62,7 @@ func Replicate( c *ReplicaConfig ) {
 
 }
 
-func (d *ReplicaConfig ) CreateConnection( role string, token string) ( e error ) {
+func (d *ReplicaConfig ) CreateConnection( role string, token string) ( error ) {
 	var address string
 
 	if role == "reader" {
@@ -73,7 +73,7 @@ func (d *ReplicaConfig ) CreateConnection( role string, token string) ( e error 
 
 	client, err := api.NewClient(&api.Config{Address: address})
 	if err != nil {
-		return
+		return err
 	}
 
 	client.SetToken(token)
